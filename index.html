@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo el Fondo</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Degradado DIVIDIDO VERTICALMENTE: izquierda degradada, derecha blanca */
+            background: linear-gradient(to right,
+                        #0f0b2e 0%,      /* Azul muy oscuro/casi negro, en el extremo izquierdo */
+                        #2e0c4f 25%,     /* Transición a un morado oscuro */
+                        #5a2b8e 49.9%,   /* Morado más vibrante, termina justo antes del 50% */
+                        #ffffff 50%,    /* Blanco puro, comienza exactamente en el 50% (crea el corte vertical) */
+                        #ffffff 100%     /* Sigue blanco hasta el extremo derecho */
+                    );
+            min-height: 100vh; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
+            overflow: hidden; /* Evita barras de desplazamiento si no hay contenido */
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
