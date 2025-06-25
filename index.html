@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fondo Dividido con Notebook Centrada</title>
+    <title>Fondo Dividido con Notebook Grande y Centrada</title>
     <style>
         /* Estilos CSS internos */
         body {
@@ -28,14 +28,14 @@
             top: 50%;  /* Coloca el borde superior de la imagen en el centro vertical */
             transform: translate(-50%, -50%); /* Mueve la imagen hacia atrás en la mitad de su propio ancho y alto,
                                                  centrándola perfectamente por su punto medio */
-            width: auto; /* Mantiene el ancho original de la imagen */
-            max-width: 80%; /* Asegura que la notebook no sea demasiado grande en pantallas pequeñas */
+            width: auto; /* Mantiene el ancho original de la imagen si no supera max-width */
+            max-width: 90%; /* <<-- AQUÍ SE AGRANDA LA IMAGEN (puedes probar 70%, 90%, etc., o un valor en px como 800px) */
             height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
         }
     </style>
 </head>
 <body>
-    <img id="notebook" src="mac.png" alt="Notebook en el centro">
+    <img id="notebook" src="image_3cf9b6.png" alt="Notebook en el centro">
 </body>
 </html>
