@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCTOS TECNOLOGICOS</title>
-
+    <title>Fondo Dividido con Notebook Centrada</title>
     <style>
+        /* Estilos CSS internos */
         body {
             margin: 0;
             padding: 0;
             /* Degradado DIVIDIDO VERTICALMENTE: izquierda degradada, derecha blanca */
             background: linear-gradient(to right,
-                        #0f0b2e 0%,      /* Azul muy oscuro/casi negro, en el extremo izquierdo */
+                        #0f0b2e 0%,      /* Azul muy oscuro/casi negro en el extremo izquierdo */
                         #2e0c4f 25%,     /* Transición a un morado oscuro */
                         #5a2b8e 49.9%,   /* Morado más vibrante, termina justo antes del 50% */
                         #ffffff 50%,    /* Blanco puro, comienza exactamente en el 50% (crea el corte vertical) */
@@ -19,9 +19,23 @@
                     );
             min-height: 100vh; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
             overflow: hidden; /* Evita barras de desplazamiento si no hay contenido */
+            position: relative; /* Necesario para posicionar la notebook absolutamente dentro del body */
+        }
+
+        #notebook {
+            position: absolute; /* Posicionamiento absoluto respecto al body */
+            left: 50%; /* Coloca el borde izquierdo de la imagen en el centro horizontal */
+            top: 50%;  /* Coloca el borde superior de la imagen en el centro vertical */
+            transform: translate(-50%, -50%); /* Mueve la imagen hacia atrás en la mitad de su propio ancho y alto,
+                                                 centrándola perfectamente por su punto medio */
+            width: auto; /* Mantiene el ancho original de la imagen */
+            max-width: 80%; /* Asegura que la notebook no sea demasiado grande en pantallas pequeñas */
+            height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
+            display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
         }
     </style>
 </head>
 <body>
+    <img id="notebook" src="image_3cf9b6.png" alt="Notebook en el centro">
 </body>
 </html>
