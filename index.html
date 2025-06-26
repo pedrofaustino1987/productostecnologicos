@@ -11,31 +11,56 @@
             padding: 0;
             /* Degradado DIVIDIDO VERTICALMENTE: izquierda degradada, derecha blanca */
             background: linear-gradient(to right,
-                        #0f0b2e 0%,      /* Azul muy oscuro/casi negro en el extremo izquierdo */
-                        #2e0c4f 25%,     /* Transición a un morado oscuro */
-                        #5a2b8e 49.9%,   /* Morado más vibrante, termina justo antes del 50% */
-                        #ffffff 50%,    /* Blanco puro, comienza exactamente en el 50% (crea el corte vertical) */
-                        #ffffff 100%     /* Sigue blanco hasta el extremo derecho */
-                    );
+                                        #0f0b2e 0%,      /* Azul muy oscuro/casi negro en el extremo izquierdo */
+                                        #2e0c4f 25%,     /* Transición a un morado oscuro */
+                                        #5a2b8e 49.9%,   /* Morado más vibrante, termina justo antes del 50% */
+                                        #ffffff 50%,    /* Blanco puro, comienza exactamente en el 50% (crea el corte vertical) */
+                                        #ffffff 100%    /* Sigue blanco hasta el extremo derecho */
+                                    );
             min-height: 100vh; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
             overflow: hidden; /* Evita barras de desplazamiento si no hay contenido */
-            position: relative; /* Necesario para posicionar la notebook absolutamente dentro del body */
+            position: relative; /* Necesario para posicionar elementos absolutamente dentro del body */
         }
 
         #notebook {
             position: absolute; /* Posicionamiento absoluto respecto al body */
             left: 50%; /* Coloca el borde izquierdo de la imagen en el centro horizontal */
             top: 50%;  /* Coloca el borde superior de la imagen en el centro vertical */
-            transform: translate(-50%, -50%); /* Mueve la imagen hacia atrás en la mitad de su propio ancho y alto,
-                                                 centrándola perfectamente por su punto medio */
+            transform: translate(-50%, -50%); /* Centra la imagen perfectamente por su punto medio */
             width: auto; /* Mantiene el ancho original de la imagen si no supera max-width */
-            max-width: 90%; /* <<-- AQUÍ SE AGRANDA LA IMAGEN (puedes probar 70%, 90%, etc., o un valor en px como 800px) */
+            max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
             height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
+        }
+
+        /* --- NUEVO ESTILO PARA EL CUADRADO/CAJA CENTRADA --- */
+        #caja-centrada {
+            position: absolute; /* Posicionamiento absoluto */
+            left: 50%; /* Centra horizontalmente */
+            top: 50%; /* Centra verticalmente */
+            transform: translate(-50%, -50%); /* Ajuste para centrar por su propio centro */
+            
+            width: 300px; /* Puedes ajustar este ancho base para tu "cuadrado" */
+            height: 1em; /* Altura de 1em */
+            
+            padding-left: 5cm; /* Espacio interno a la izquierda */
+            padding-right: 5cm; /* Espacio interno a la derecha */
+            
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para verlo */
+            border: 2px solid #ccc; /* Borde para visualizarlo mejor */
+            box-sizing: border-box; /* Incluye padding y borde en el width/height */
+            text-align: center; /* Centra el texto dentro de la caja si lo añades */
+            color: #333; /* Color del texto si lo añades */
+            line-height: 1em; /* Alinea el texto verticalmente en el centro del alto */
+            font-size: 2em; /* Tamaño de fuente para que 1em de alto sea visible */
         }
     </style>
 </head>
 <body>
     <img id="notebook" src="macbook.png" alt="Notebook en el centro">
+
+    <div id="caja-centrada">
+        Hola
+    </div>
 </body>
 </html>
