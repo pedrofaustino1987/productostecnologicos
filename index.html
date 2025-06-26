@@ -48,14 +48,13 @@
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
-            /* font-size: 2em; - Este ya no es tan relevante, ya que el span lo sobrescribe */
             z-index: 1; /* Coloca las cajas por debajo de la notebook */
             border-radius: 1em; /* Hace las esquinas curvas. */
         }
 
         /* Estilo para los spans dentro de las cajas */
         .caja-general span {
-            font-size: 30px; /* ¡NUEVO! Tamaño de fuente para el texto dentro de los spans */
+            font-size: 20px; /* ¡NUEVO! Tamaño de fuente para el texto dentro de los spans */
             line-height: 1; /* Asegura que el line-height del span no interfiera con el centrado del flexbox */
         }
 
@@ -73,7 +72,6 @@
         }
 
         /* Posicionamiento vertical específico para cada caja */
-        /* Puede que necesites ajustar estos valores si los textos grandes hacen que las cajas se superpongan */
         .caja-general:nth-child(2) { top: calc(50% - 4.5em); }
         .caja-general:nth-child(3) { top: calc(50% - 3em); }  
         .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
