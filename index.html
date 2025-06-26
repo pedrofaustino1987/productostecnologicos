@@ -42,35 +42,30 @@
             
             width: calc(100% - 4em); /* El ancho es el 100% menos 2em de izquierda y 2em de derecha (4em en total) */
             
-            height: 2em; /* Altura de 2em */
+            height: 1em; /* ¡NUEVA ALTURA: 1em! */
             
             background-color: #5a2b8e; /* Color de fondo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
             text-align: center; /* Centra el texto */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
-            line-height: 2em; /* Alinea el texto verticalmente */
+            line-height: 1em; /* Ajusté la altura de línea para centrar el texto verticalmente en 1em */
             font-size: 2em; /* Tamaño de fuente para visibilidad */
             z-index: 1; /* Coloca las cajas por debajo de la notebook */
             border-radius: 1em; /* Hace las esquinas curvas. */
         }
 
         /* Posicionamiento individual para cada caja */
-        /* Estas reglas se añaden para que cada caja esté en una posición vertical diferente */
-        .caja-general:nth-child(2) { top: calc(50% - 9em); } /* Caja 1: más arriba */
-        .caja-general:nth-child(3) { top: calc(50% - 6em); } /* Caja 2 */
-        .caja-general:nth-child(4) { top: calc(50% - 3em); } /* Caja 3 */
-        .caja-general:nth-child(5) { top: 50%; }             /* Caja 4 (la original, centrada) */
-        .caja-general:nth-child(6) { top: calc(50% + 3em); } /* Caja 5 */
-        .caja-general:nth-child(7) { top: calc(50% + 6em); } /* Caja 6 */
-        .caja-general:nth-child(8) { top: calc(50% + 9em); } /* Caja 7 */
-        .caja-general:nth-child(9) { top: calc(50% + 12em); } /* Caja 8 */
-        .caja-general:nth-child(10) { top: calc(50% + 15em); } /* Caja 9: más abajo */
-
-        /* Puedes ajustar los valores 'em' para controlar la separación entre cajas.
-           He usado 3em de incremento porque la altura de la caja es 2em,
-           y 1em adicional para la separación entre ellas (2em + 1em = 3em).
-        */
+        /* Hemos ajustado los valores 'em' para que la separación entre cajas sea 1.5em (altura 1em + 0.5em de espacio) */
+        .caja-general:nth-child(2) { top: calc(50% - 6em); } /* Caja 1: 4.5 * 1.5em */
+        .caja-general:nth-child(3) { top: calc(50% - 4.5em); } /* Caja 2: 3 * 1.5em */
+        .caja-general:nth-child(4) { top: calc(50% - 3em); } /* Caja 3: 2 * 1.5em */
+        .caja-general:nth-child(5) { top: calc(50% - 1.5em); } /* Caja 4: 1 * 1.5em */
+        .caja-general:nth-child(6) { top: 50%; } /* Caja 5: La central */
+        .caja-general:nth-child(7) { top: calc(50% + 1.5em); } /* Caja 6 */
+        .caja-general:nth-child(8) { top: calc(50% + 3em); } /* Caja 7 */
+        .caja-general:nth-child(9) { top: calc(50% + 4.5em); } /* Caja 8 */
+        .caja-general:nth-child(10) { top: calc(50% + 6em); } /* Caja 9: más abajo */
 
     </style>
 </head>
