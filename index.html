@@ -47,63 +47,43 @@
             background-color: #5a2b8e; /* Color de fondo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
-            text-align: center; /* Centra el texto por defecto para las cajas sin flexbox */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
-            line-height: 1em; /* Alinea el texto verticalmente */
-            font-size: 2em; /* Tamaño de fuente para visibilidad */
+            font-size: 2em; /* Tamaño de fuente base para la caja, pero será sobrescrito por el span */
             z-index: 1; /* Coloca las cajas por debajo de la notebook */
             border-radius: 1em; /* Hace las esquinas curvas. */
         }
 
-        /* Posicionamiento y estilos individuales para cada caja */
-        /* Ten en cuenta que nth-child(2) ahora se refiere a la primera caja visible (el primer div.caja-general) */
-        .caja-general:nth-child(2) { 
-            top: calc(50% - 4.5em); 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding-left: 0.5em; 
-            padding-right: 0.5em; 
-            text-align: initial; 
+        /* Estilo para los spans dentro de las cajas */
+        .caja-general span {
+            font-size: 6px; /* ¡NUEVO! Tamaño de fuente para el texto dentro de los spans */
+            /* Es importante notar que font-size en 'em' se basa en el font-size del padre.
+               Al cambiar la altura de línea de la caja, el centrado vertical ya se manejaba.
+               Para los spans, el line-height no es crítico si align-items: center está activo. */
+            line-height: 1; /* Asegura que el line-height del span no interfiera con el centrado del flexbox */
         }
-        .caja-general:nth-child(3) { 
-            top: calc(50% - 3em);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding-left: 0.5em; 
-            padding-right: 0.5em; 
-            text-align: initial; 
-        }  
-        .caja-general:nth-child(4) { 
-            top: calc(50% - 1.5em);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding-left: 0.5em; 
-            padding-right: 0.5em; 
-            text-align: initial; 
-        } 
-        .caja-general:nth-child(5) { 
-            top: 50%; /* Esta es la caja central */
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding-left: 0.5em; 
-            padding-right: 0.5em; 
-            text-align: initial; 
-        }              
-        .caja-general:nth-child(6) { 
-            top: calc(50% + 1.5em);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding-left: 0.5em; 
-            padding-right: 0.5em; 
-            text-align: initial; 
-        } 
-        /* La regla para .caja-general:nth-child(7) se ha eliminado */
 
+        /* Posicionamiento y estilos individuales para cada caja que usa Flexbox */
+        /* Estas reglas aseguran que las cajas se comporten como contenedores flex */
+        .caja-general:nth-child(2),
+        .caja-general:nth-child(3),
+        .caja-general:nth-child(4),
+        .caja-general:nth-child(5),
+        .caja-general:nth-child(6) { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            /* text-align: initial; ya no es necesario aquí si se usa display: flex */
+            /* line-height: 1em; se aplica a la caja, no al span directamente para el centrado vertical del texto dentro del span */
+        }
+
+        /* Posicionamiento vertical específico para cada caja */
+        .caja-general:nth-child(2) { top: calc(50% - 4.5em); }
+        .caja-general:nth-child(3) { top: calc(50% - 3em); }  
+        .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
+        .caja-general:nth-child(5) { top: 50%; }              
+        .caja-general:nth-child(6) { top: calc(50% + 1.5em); } 
     </style>
 </head>
 <body>
