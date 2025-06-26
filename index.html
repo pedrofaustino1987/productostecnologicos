@@ -47,7 +47,7 @@
             background-color: #5a2b8e; /* Color de fondo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
-            text-align: center; /* Centra el texto por defecto para todas las cajas */
+            text-align: center; /* Centra el texto por defecto para las otras cajas */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
             line-height: 1em; /* Alinea el texto verticalmente */
             font-size: 2em; /* Tamaño de fuente para visibilidad */
@@ -56,11 +56,14 @@
         }
 
         /* Posicionamiento y estilos individuales para cada caja restante */
-        /* Ten en cuenta que nth-child(2) ahora se refiere a la primera caja visible (el primer div.caja-general) */
         .caja-general:nth-child(2) { 
             top: calc(50% - 4.5em); 
-            text-align: left; /* Alinea el texto "PRACTICA" a la izquierda */
-            padding-left: 0.5em; /* Añade un pequeño espacio interno a la izquierda para el texto */
+            display: flex; /* ¡NUEVO! Convierte la caja en un contenedor flex */
+            justify-content: space-between; /* ¡NUEVO! Empuja los elementos internos a los extremos */
+            align-items: center; /* ¡NUEVO! Centra verticalmente los elementos internos */
+            padding-left: 0.5em; /* Espacio a la izquierda para "PRACTICA" */
+            padding-right: 0.5em; /* Espacio a la derecha para "PEDAGOGIA" */
+            text-align: initial; /* Resetea text-align para que flexbox controle la posición */
         }
         .caja-general:nth-child(3) { top: calc(50% - 3em); }  
         .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
@@ -73,7 +76,11 @@
 <body>
     <img id="notebook" src="macbook.png" alt="Notebook en el centro">
 
-    <div class="caja-general">PRACTICA</div> <div class="caja-general">Caja 3</div>
+    <div class="caja-general">
+        <span>PRACTICA</span>
+        <span>PEDAGOGIA</span>
+    </div>
+    <div class="caja-general">Caja 3</div>
     <div class="caja-general">Caja 4</div>
     <div class="caja-general">Caja 5</div>
     <div class="caja-general">Caja 6</div>
