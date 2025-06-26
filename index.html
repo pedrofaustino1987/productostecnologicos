@@ -36,12 +36,12 @@
         /* --- ESTILO MODIFICADO PARA LA CAJA CENTRADA --- */
         #caja-centrada {
             position: absolute; /* Posicionamiento absoluto */
-            left: 2em; /* ¡Ahora empieza con un espacio de 2em desde la izquierda! */
-            right: 0; /* Y se extiende hasta el borde derecho */
+            left: 0; /* Ahora empieza desde el borde izquierdo (sin espacio) */
+            right: 2em; /* ¡Y termina con un espacio de 2em desde la derecha! */
             top: 50%; /* Sigue centrada verticalmente */
             transform: translateY(-50%); /* Ajuste para centrar solo verticalmente */
             
-            width: calc(100% - 2em); /* El ancho es el 100% menos los 2em del margen izquierdo */
+            width: calc(100% - 2em); /* El ancho es el 100% menos los 2em del margen derecho */
             
             height: 1em; /* Altura de 1em */
             
