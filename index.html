@@ -33,18 +33,24 @@
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
         }
 
-        /* --- NUEVO ESTILO PARA EL CUADRADO/CAJA CENTRADA --- */
+        /* --- ESTILO MODIFICADO PARA LA CAJA CENTRADA --- */
         #caja-centrada {
             position: absolute; /* Posicionamiento absoluto */
-            left: 50%; /* Centra horizontalmente */
+            left: 50%; /* Todavía centramos con left/transform para el eje vertical */
             top: 50%; /* Centra verticalmente */
             transform: translate(-50%, -50%); /* Ajuste para centrar por su propio centro */
             
-            width: 300px; /* Puedes ajustar este ancho base para tu "cuadrado" */
-            height: 1em; /* Altura de 1em */
+            /* --- CAMBIOS AQUÍ --- */
+            width: calc(100% - 10cm); /* Ocupa el 100% del ancho del body, menos 5cm de cada lado (10cm en total) */
+            max-width: 100%; /* Asegura que no se exceda si 100% - 10cm es negativo en pantallas muy pequeñas */
             
-            padding-left: 5cm; /* Espacio interno a la izquierda */
-            padding-right: 5cm; /* Espacio interno a la derecha */
+            /* margin: auto; NO ES NECESARIO CON ABSOLUTE Y CALC */
+            
+            height: 1em; /* Altura de 1em, como pediste anteriormente */
+            
+            /* Se eliminan los paddings, ya que el ancho se calcula con los 5cm de margen */
+            /* padding-left: 5cm; */
+            /* padding-right: 5cm; */
             
             background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para verlo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
