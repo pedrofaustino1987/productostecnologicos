@@ -56,16 +56,26 @@
         }
 
         /* Posicionamiento y estilos individuales para cada caja restante */
+        /* Ten en cuenta que nth-child(2) ahora se refiere a la primera caja visible (el primer div.caja-general) */
         .caja-general:nth-child(2) { 
             top: calc(50% - 4.5em); 
-            display: flex; /* ¡NUEVO! Convierte la caja en un contenedor flex */
-            justify-content: space-between; /* ¡NUEVO! Empuja los elementos internos a los extremos */
-            align-items: center; /* ¡NUEVO! Centra verticalmente los elementos internos */
+            display: flex; /* Convierte la caja en un contenedor flex */
+            justify-content: space-between; /* Empuja los elementos internos a los extremos */
+            align-items: center; /* Centra verticalmente los elementos internos */
             padding-left: 0.5em; /* Espacio a la izquierda para "PRACTICA" */
             padding-right: 0.5em; /* Espacio a la derecha para "PEDAGOGIA" */
             text-align: initial; /* Resetea text-align para que flexbox controle la posición */
         }
-        .caja-general:nth-child(3) { top: calc(50% - 3em); }  
+        /* NUEVO ESTILO PARA LA TERCERA CAJA (nth-child(3)) */
+        .caja-general:nth-child(3) { 
+            top: calc(50% - 3em);
+            display: flex; /* Convierte la caja en un contenedor flex */
+            justify-content: space-between; /* Empuja los elementos internos a los extremos */
+            align-items: center; /* Centra verticalmente los elementos internos */
+            padding-left: 0.5em; /* Espacio a la izquierda para "FILOSOFIA" */
+            padding-right: 0.5em; /* Espacio a la derecha para "TALLER DE ORALIDAD" */
+            text-align: initial; /* Resetea text-align para que flexbox controle la posición */
+        }  
         .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
         .caja-general:nth-child(5) { top: 50%; }              
         .caja-general:nth-child(6) { top: calc(50% + 1.5em); } 
@@ -80,7 +90,10 @@
         <span>PRACTICA</span>
         <span>PEDAGOGIA</span>
     </div>
-    <div class="caja-general">Caja 3</div>
+    <div class="caja-general">
+        <span>FILOSOFIA</span>
+        <span>TALLER DE ORALIDAD</span>
+    </div>
     <div class="caja-general">Caja 4</div>
     <div class="caja-general">Caja 5</div>
     <div class="caja-general">Caja 6</div>
