@@ -36,29 +36,22 @@
         /* --- ESTILO MODIFICADO PARA LA CAJA CENTRADA --- */
         #caja-centrada {
             position: absolute; /* Posicionamiento absoluto */
-            left: 50%; /* Todavía centramos con left/transform para el eje vertical */
-            top: 50%; /* Centra verticalmente */
-            transform: translate(-50%, -50%); /* Ajuste para centrar por su propio centro */
+            left: 0; /* Ahora empieza desde el borde izquierdo */
+            right: 0; /* Y se extiende hasta el borde derecho */
+            top: 50%; /* Sigue centrada verticalmente */
+            transform: translateY(-50%); /* Ajuste para centrar solo verticalmente */
             
-            /* --- CAMBIOS AQUÍ --- */
-            width: calc(100% - 10cm); /* Ocupa el 100% del ancho del body, menos 5cm de cada lado (10cm en total) */
-            max-width: 100%; /* Asegura que no se exceda si 100% - 10cm es negativo en pantallas muy pequeñas */
+            width: 100%; /* ¡Ocupa todo el ancho! */
             
-            /* margin: auto; NO ES NECESARIO CON ABSOLUTE Y CALC */
+            height: 1em; /* Altura de 1em, como pediste */
             
-            height: 1em; /* Altura de 1em, como pediste anteriormente */
-            
-            /* Se eliminan los paddings, ya que el ancho se calcula con los 5cm de margen */
-            /* padding-left: 5cm; */
-            /* padding-right: 5cm; */
-            
-            background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para verlo */
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
-            box-sizing: border-box; /* Incluye padding y borde en el width/height */
-            text-align: center; /* Centra el texto dentro de la caja si lo añades */
-            color: #333; /* Color del texto si lo añades */
-            line-height: 1em; /* Alinea el texto verticalmente en el centro del alto */
-            font-size: 2em; /* Tamaño de fuente para que 1em de alto sea visible */
+            box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
+            text-align: center; /* Centra el texto */
+            color: #333; /* Color del texto */
+            line-height: 1em; /* Alinea el texto verticalmente */
+            font-size: 2em; /* Tamaño de fuente para visibilidad */
         }
     </style>
 </head>
