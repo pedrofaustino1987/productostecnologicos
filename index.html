@@ -55,15 +55,11 @@
 
         /* Estilo para los spans dentro de las cajas */
         .caja-general span {
-            font-size: 6px; /* ¡NUEVO! Tamaño de fuente para el texto dentro de los spans */
-            /* Es importante notar que font-size en 'em' se basa en el font-size del padre.
-               Al cambiar la altura de línea de la caja, el centrado vertical ya se manejaba.
-               Para los spans, el line-height no es crítico si align-items: center está activo. */
+            font-size: 12px; /* ¡NUEVO! Tamaño de fuente para el texto dentro de los spans */
             line-height: 1; /* Asegura que el line-height del span no interfiera con el centrado del flexbox */
         }
 
         /* Posicionamiento y estilos individuales para cada caja que usa Flexbox */
-        /* Estas reglas aseguran que las cajas se comporten como contenedores flex */
         .caja-general:nth-child(2),
         .caja-general:nth-child(3),
         .caja-general:nth-child(4),
@@ -74,8 +70,6 @@
             align-items: center; 
             padding-left: 0.5em; 
             padding-right: 0.5em; 
-            /* text-align: initial; ya no es necesario aquí si se usa display: flex */
-            /* line-height: 1em; se aplica a la caja, no al span directamente para el centrado vertical del texto dentro del span */
         }
 
         /* Posicionamiento vertical específico para cada caja */
