@@ -31,55 +31,50 @@
             max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
             height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
-            z-index: 10; /* Le di un z-index más alto para asegurar que siempre esté por encima de todas las cajas */
+            z-index: 10; /* Asegura que siempre esté por encima de todas las cajas */
         }
 
-        /* --- ESTILOS PARA LAS NUEVAS CAJAS CON CLASE .caja-general --- */
-        .caja-general { /* Cambiado de #caja-centrada a .caja-general */
-            position: absolute; /* Posicionamiento absoluto */
-            left: 2em; /* Espacio de 2em desde la izquierda */
-            right: 2em; /* Y espacio de 2em desde la derecha */
+        /* --- ESTILOS PARA LAS CAJAS CON CLASE .caja-general --- */
+        .caja-general {
+            position: absolute;
+            left: 2em;
+            right: 2em;
             
-            width: calc(100% - 4em); /* El ancho es el 100% menos 2em de izquierda y 2em de derecha (4em en total) */
+            width: calc(100% - 4em);
             
-            height: 1em; /* ¡NUEVA ALTURA: 1em! */
+            height: 1em; /* Altura de 1em */
             
-            background-color: #5a2b8e; /* Color de fondo */
-            border: 2px solid #ccc; /* Borde para visualizarlo mejor */
-            box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
-            text-align: center; /* Centra el texto */
-            color: #ffffff; /* Color del texto a blanco para mejor contraste */
-            line-height: 1em; /* Ajusté la altura de línea para centrar el texto verticalmente en 1em */
-            font-size: 2em; /* Tamaño de fuente para visibilidad */
-            z-index: 1; /* Coloca las cajas por debajo de la notebook */
-            border-radius: 1em; /* Hace las esquinas curvas. */
+            background-color: #5a2b8e;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            color: #ffffff;
+            line-height: 1em; /* Alinea el texto verticalmente */
+            font-size: 2em;
+            z-index: 1;
+            border-radius: 1em;
         }
 
-        /* Posicionamiento individual para cada caja */
-        /* Hemos ajustado los valores 'em' para que la separación entre cajas sea 1.5em (altura 1em + 0.5em de espacio) */
-        .caja-general:nth-child(2) { top: calc(50% - 6em); } /* Caja 1: 4.5 * 1.5em */
-        .caja-general:nth-child(3) { top: calc(50% - 4.5em); } /* Caja 2: 3 * 1.5em */
-        .caja-general:nth-child(4) { top: calc(50% - 3em); } /* Caja 3: 2 * 1.5em */
-        .caja-general:nth-child(5) { top: calc(50% - 1.5em); } /* Caja 4: 1 * 1.5em */
-        .caja-general:nth-child(6) { top: 50%; } /* Caja 5: La central */
-        .caja-general:nth-child(7) { top: calc(50% + 1.5em); } /* Caja 6 */
-        .caja-general:nth-child(8) { top: calc(50% + 3em); } /* Caja 7 */
-        .caja-general:nth-child(9) { top: calc(50% + 4.5em); } /* Caja 8 */
-        .caja-general:nth-child(10) { top: calc(50% + 6em); } /* Caja 9: más abajo */
+        /* Posicionamiento individual para cada caja restante */
+        /* Ten en cuenta que nth-child(1) ahora se refiere a la ex "Caja 2"
+           porque la imagen es el primer hijo. */
+        .caja-general:nth-child(2) { top: calc(50% - 4.5em); } /* Ahora es la primera caja visible (ex Caja 2) */
+        .caja-general:nth-child(3) { top: calc(50% - 3em); }  /* Ex Caja 3 */
+        .caja-general:nth-child(4) { top: calc(50% - 1.5em); } /* Ex Caja 4 */
+        .caja-general:nth-child(5) { top: 50%; }              /* Ex Caja 5 (la central) */
+        .caja-general:nth-child(6) { top: calc(50% + 1.5em); } /* Ex Caja 6 */
+        .caja-general:nth-child(7) { top: calc(50% + 3em); }  /* Ex Caja 7 */
 
     </style>
 </head>
 <body>
     <img id="notebook" src="macbook.png" alt="Notebook en el centro">
 
-    <div class="caja-general">Caja 1</div>
     <div class="caja-general">Caja 2</div>
     <div class="caja-general">Caja 3</div>
     <div class="caja-general">Caja 4</div>
     <div class="caja-general">Caja 5</div>
     <div class="caja-general">Caja 6</div>
     <div class="caja-general">Caja 7</div>
-    <div class="caja-general">Caja 8</div>
-    <div class="caja-general">Caja 9</div>
 </body>
 </html>
