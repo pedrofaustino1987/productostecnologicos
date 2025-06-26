@@ -47,7 +47,7 @@
             background-color: #5a2b8e; /* Color de fondo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
-            text-align: center; /* Centra el texto por defecto para las otras cajas */
+            text-align: center; /* Centra el texto por defecto para las cajas sin flexbox */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
             line-height: 1em; /* Alinea el texto verticalmente */
             font-size: 2em; /* Tamaño de fuente para visibilidad */
@@ -55,30 +55,56 @@
             border-radius: 1em; /* Hace las esquinas curvas. */
         }
 
-        /* Posicionamiento y estilos individuales para cada caja restante */
+        /* Posicionamiento y estilos individuales para cada caja */
         /* Ten en cuenta que nth-child(2) ahora se refiere a la primera caja visible (el primer div.caja-general) */
         .caja-general:nth-child(2) { 
             top: calc(50% - 4.5em); 
-            display: flex; /* Convierte la caja en un contenedor flex */
-            justify-content: space-between; /* Empuja los elementos internos a los extremos */
-            align-items: center; /* Centra verticalmente los elementos internos */
-            padding-left: 0.5em; /* Espacio a la izquierda para "PRACTICA" */
-            padding-right: 0.5em; /* Espacio a la derecha para "PEDAGOGIA" */
-            text-align: initial; /* Resetea text-align para que flexbox controle la posición */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            text-align: initial; 
         }
-        /* NUEVO ESTILO PARA LA TERCERA CAJA (nth-child(3)) */
         .caja-general:nth-child(3) { 
             top: calc(50% - 3em);
-            display: flex; /* Convierte la caja en un contenedor flex */
-            justify-content: space-between; /* Empuja los elementos internos a los extremos */
-            align-items: center; /* Centra verticalmente los elementos internos */
-            padding-left: 0.5em; /* Espacio a la izquierda para "FILOSOFIA" */
-            padding-right: 0.5em; /* Espacio a la derecha para "TALLER DE ORALIDAD" */
-            text-align: initial; /* Resetea text-align para que flexbox controle la posición */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            text-align: initial; 
         }  
-        .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
-        .caja-general:nth-child(5) { top: 50%; }              
-        .caja-general:nth-child(6) { top: calc(50% + 1.5em); } 
+        /* NUEVOS ESTILOS PARA LA CAJA 4 (nth-child(4)) */
+        .caja-general:nth-child(4) { 
+            top: calc(50% - 1.5em);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            text-align: initial; 
+        } 
+        /* NUEVOS ESTILOS PARA LA CAJA 5 (nth-child(5)) */
+        .caja-general:nth-child(5) { 
+            top: 50%; /* Esta es la caja central */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            text-align: initial; 
+        }              
+        /* NUEVOS ESTILOS PARA LA CAJA 6 (nth-child(6)) */
+        .caja-general:nth-child(6) { 
+            top: calc(50% + 1.5em);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-left: 0.5em; 
+            padding-right: 0.5em; 
+            text-align: initial; 
+        } 
         .caja-general:nth-child(7) { top: calc(50% + 3em); }  
 
     </style>
@@ -94,9 +120,17 @@
         <span>FILOSOFIA</span>
         <span>TALLER DE ORALIDAD</span>
     </div>
-    <div class="caja-general">Caja 4</div>
-    <div class="caja-general">Caja 5</div>
-    <div class="caja-general">Caja 6</div>
+    <div class="caja-general">
+        <span>EDUCACION TECNOLOGICA</span>
+        <span>TEOLOGIA</span>
+    </div>
+    <div class="caja-general">
+        <span>MATEMATICA</span>
+        <span>FISICA APLICADA</span>
+    </div>
+    <div class="caja-general">
+        <span>HISTORIA DE LA TECNOLOGIA</span>
+        <span></span> </div>
     <div class="caja-general">Caja 7</div>
 </body>
 </html>
