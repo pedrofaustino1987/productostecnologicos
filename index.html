@@ -44,34 +44,36 @@
             
             height: 1em; /* Altura de 1em */
             
-            background-color: #5a2b8e;
-            border: 2px solid #ccc;
-            box-sizing: border-box;
-            text-align: center;
-            color: #ffffff;
+            background-color: #5a2b8e; /* Color de fondo */
+            border: 2px solid #ccc; /* Borde para visualizarlo mejor */
+            box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
+            text-align: center; /* Centra el texto por defecto para todas las cajas */
+            color: #ffffff; /* Color del texto a blanco para mejor contraste */
             line-height: 1em; /* Alinea el texto verticalmente */
-            font-size: 2em;
-            z-index: 1;
-            border-radius: 1em;
+            font-size: 2em; /* Tamaño de fuente para visibilidad */
+            z-index: 1; /* Coloca las cajas por debajo de la notebook */
+            border-radius: 1em; /* Hace las esquinas curvas. */
         }
 
-        /* Posicionamiento individual para cada caja restante */
-        /* Ten en cuenta que nth-child(1) ahora se refiere a la ex "Caja 2"
-           porque la imagen es el primer hijo. */
-        .caja-general:nth-child(2) { top: calc(50% - 4.5em); } /* Ahora es la primera caja visible (ex Caja 2) */
-        .caja-general:nth-child(3) { top: calc(50% - 3em); }  /* Ex Caja 3 */
-        .caja-general:nth-child(4) { top: calc(50% - 1.5em); } /* Ex Caja 4 */
-        .caja-general:nth-child(5) { top: 50%; }              /* Ex Caja 5 (la central) */
-        .caja-general:nth-child(6) { top: calc(50% + 1.5em); } /* Ex Caja 6 */
-        .caja-general:nth-child(7) { top: calc(50% + 3em); }  /* Ex Caja 7 */
+        /* Posicionamiento y estilos individuales para cada caja restante */
+        /* Ten en cuenta que nth-child(2) ahora se refiere a la primera caja visible (el primer div.caja-general) */
+        .caja-general:nth-child(2) { 
+            top: calc(50% - 4.5em); 
+            text-align: left; /* Alinea el texto "PRACTICA" a la izquierda */
+            padding-left: 0.5em; /* Añade un pequeño espacio interno a la izquierda para el texto */
+        }
+        .caja-general:nth-child(3) { top: calc(50% - 3em); }  
+        .caja-general:nth-child(4) { top: calc(50% - 1.5em); } 
+        .caja-general:nth-child(5) { top: 50%; }              
+        .caja-general:nth-child(6) { top: calc(50% + 1.5em); } 
+        .caja-general:nth-child(7) { top: calc(50% + 3em); }  
 
     </style>
 </head>
 <body>
     <img id="notebook" src="macbook.png" alt="Notebook en el centro">
 
-    <div class="caja-general">Caja 2</div>
-    <div class="caja-general">Caja 3</div>
+    <div class="caja-general">PRACTICA</div> <div class="caja-general">Caja 3</div>
     <div class="caja-general">Caja 4</div>
     <div class="caja-general">Caja 5</div>
     <div class="caja-general">Caja 6</div>
