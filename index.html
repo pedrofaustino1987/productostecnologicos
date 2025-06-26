@@ -31,16 +31,14 @@
             max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
             height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
-            z-index: 2; /* Coloca la notebook por encima de la caja */
+            z-index: 10; /* Le di un z-index más alto para asegurar que siempre esté por encima de todas las cajas */
         }
 
-        /* --- ESTILO MODIFICADO PARA LA CAJA CENTRADA --- */
-        #caja-centrada {
+        /* --- ESTILOS PARA LAS NUEVAS CAJAS CON CLASE .caja-general --- */
+        .caja-general { /* Cambiado de #caja-centrada a .caja-general */
             position: absolute; /* Posicionamiento absoluto */
             left: 2em; /* Espacio de 2em desde la izquierda */
             right: 2em; /* Y espacio de 2em desde la derecha */
-            top: 50%; /* Sigue centrada verticalmente */
-            transform: translateY(-50%); /* Ajuste para centrar solo verticalmente */
             
             width: calc(100% - 4em); /* El ancho es el 100% menos 2em de izquierda y 2em de derecha (4em en total) */
             
@@ -53,16 +51,40 @@
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
             line-height: 2em; /* Alinea el texto verticalmente */
             font-size: 2em; /* Tamaño de fuente para visibilidad */
-            z-index: 1; /* Coloca la caja por debajo de la notebook */
-            border-radius: 1em; /* ¡NUEVO! Hace las esquinas curvas. Puedes ajustar el valor. */
+            z-index: 1; /* Coloca las cajas por debajo de la notebook */
+            border-radius: 1em; /* Hace las esquinas curvas. */
         }
+
+        /* Posicionamiento individual para cada caja */
+        /* Estas reglas se añaden para que cada caja esté en una posición vertical diferente */
+        .caja-general:nth-child(2) { top: calc(50% - 9em); } /* Caja 1: más arriba */
+        .caja-general:nth-child(3) { top: calc(50% - 6em); } /* Caja 2 */
+        .caja-general:nth-child(4) { top: calc(50% - 3em); } /* Caja 3 */
+        .caja-general:nth-child(5) { top: 50%; }             /* Caja 4 (la original, centrada) */
+        .caja-general:nth-child(6) { top: calc(50% + 3em); } /* Caja 5 */
+        .caja-general:nth-child(7) { top: calc(50% + 6em); } /* Caja 6 */
+        .caja-general:nth-child(8) { top: calc(50% + 9em); } /* Caja 7 */
+        .caja-general:nth-child(9) { top: calc(50% + 12em); } /* Caja 8 */
+        .caja-general:nth-child(10) { top: calc(50% + 15em); } /* Caja 9: más abajo */
+
+        /* Puedes ajustar los valores 'em' para controlar la separación entre cajas.
+           He usado 3em de incremento porque la altura de la caja es 2em,
+           y 1em adicional para la separación entre ellas (2em + 1em = 3em).
+        */
+
     </style>
 </head>
 <body>
     <img id="notebook" src="macbook.png" alt="Notebook en el centro">
 
-    <div id="caja-centrada">
-        Hola
-    </div>
+    <div class="caja-general">Caja 1</div>
+    <div class="caja-general">Caja 2</div>
+    <div class="caja-general">Caja 3</div>
+    <div class="caja-general">Caja 4</div>
+    <div class="caja-general">Caja 5</div>
+    <div class="caja-general">Caja 6</div>
+    <div class="caja-general">Caja 7</div>
+    <div class="caja-general">Caja 8</div>
+    <div class="caja-general">Caja 9</div>
 </body>
 </html>
