@@ -31,6 +31,7 @@
             max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
             height: auto; /* Mantiene la proporción de la imagen al ajustar el ancho */
             display: block; /* Asegura que la imagen sea un elemento de bloque para el posicionamiento */
+            z-index: 2; /* ¡NUEVO! Coloca la notebook por encima de la caja */
         }
 
         /* --- ESTILO MODIFICADO PARA LA CAJA CENTRADA --- */
@@ -43,15 +44,16 @@
             
             width: calc(100% - 4em); /* El ancho es el 100% menos 2em de izquierda y 2em de derecha (4em en total) */
             
-            height: 2em; /* ¡NUEVA ALTURA: 2em! */
+            height: 2em; /* Altura de 2em */
             
             background-color: #5a2b8e; /* Color de fondo */
             border: 2px solid #ccc; /* Borde para visualizarlo mejor */
             box-sizing: border-box; /* Incluye padding y borde en el width/height si los añades */
             text-align: center; /* Centra el texto */
             color: #ffffff; /* Color del texto a blanco para mejor contraste */
-            line-height: 2em; /* Ajuste la altura de línea para centrar el texto verticalmente en 2em */
+            line-height: 2em; /* Alinea el texto verticalmente */
             font-size: 2em; /* Tamaño de fuente para visibilidad */
+            z-index: 1; /* ¡NUEVO! Coloca la caja por debajo de la notebook */
         }
     </style>
 </head>
